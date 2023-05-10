@@ -7,6 +7,17 @@ body {
   overflow: hidden;
 }
 
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -25%);
+  }
+}
+
 .button-container {
   width: 100vw;
   height: 100vh;
@@ -40,6 +51,7 @@ button {
   opacity: 0%;
   text-align: center;
 }
+
 .popup-modal p {
   margin-bottom: 24px
 }
@@ -55,6 +67,8 @@ button {
 .popup-modal.show {
   opacity: 100%;
   pointer-events: all;
+  animation: slide-down 0.5s ease-out;
+  animation-fill-mode: forwards;
 }
 
 .backdrop.show {
